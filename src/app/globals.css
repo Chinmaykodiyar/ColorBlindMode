@@ -1,0 +1,207 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 270 14.3% 94.9%; /* #F2F0F4 Very light grey */
+    --foreground: 270 10% 25%; /* Dark grey for text */
+
+    --card: 270 14.3% 98%;
+    --card-foreground: var(--foreground);
+
+    --popover: 270 14.3% 98%;
+    --popover-foreground: var(--foreground);
+
+    --primary: 255 25% 83.7%; /* #D0C9E2 Soft Lavender */
+    --primary-foreground: 255 15% 30%; /* Darker purple for text on lavender */
+
+    --secondary: 255 20% 90%; /* Lighter lavender */
+    --secondary-foreground: 255 15% 30%;
+
+    --muted: 270 10% 88%;
+    --muted-foreground: 270 10% 45%;
+
+    --accent: 350 17% 70.8%; /* #C1A5A8 Dusty Rose */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 10% 85%;
+    --input: 270 10% 90%;
+    --ring: 255 25% 75%;
+    --radius: 0.5rem;
+
+    /* Chart Colors - Default (Normal) */
+    --chart-1: 210 90% 50%; /* Blue */
+    --chart-2: 0 90% 60%; /* Red */
+    --chart-3: 120 70% 45%; /* Green */
+    --chart-4: 45 100% 55%; /* Yellow */
+    --chart-5: 280 80% 65%; /* Purple */
+
+    /* Specific Semantic Colors for App Content */
+    --app-color-success: 140 60% 50%;
+    --app-color-warning: 40 90% 60%;
+    --app-color-info: 200 80% 60%;
+    --app-color-neutral-text: var(--foreground);
+  }
+
+  .dark {
+    --background: 270 10% 15%;
+    --foreground: 270 10% 80%;
+
+    --card: 270 10% 20%;
+    --card-foreground: var(--foreground);
+
+    --popover: 270 10% 20%;
+    --popover-foreground: var(--foreground);
+
+    --primary: 255 25% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 255 20% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 270 10% 30%;
+    --muted-foreground: 270 10% 65%;
+
+    --accent: 350 20% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 10% 35%;
+    --input: 270 10% 25%;
+    --ring: 255 25% 65%;
+
+    /* Chart Colors - Dark */
+    --chart-1: 210 80% 60%;
+    --chart-2: 0 80% 70%;
+    --chart-3: 120 60% 55%;
+    --chart-4: 45 90% 65%;
+    --chart-5: 280 70% 75%;
+
+    --app-color-success: 140 50% 60%;
+    --app-color-warning: 40 80% 70%;
+    --app-color-info: 200 70% 70%;
+    --app-color-neutral-text: var(--foreground);
+  }
+
+  /* Protanopia Friendly Palette */
+  html.palette-protanopia-friendly {
+    --primary: 220 60% 75%; /* Sky Blue */
+    --primary-foreground: 220 30% 20%;
+    --accent: 50 80% 65%; /* Yellow-Orange */
+    --accent-foreground: 50 30% 20%;
+    --destructive: 240 50% 60%; /* Using a distinct blue for destructive actions */
+    --destructive-foreground: 0 0% 100%;
+
+    --chart-1: 220 60% 75%; /* Sky Blue */
+    --chart-2: 50 80% 65%;  /* Yellow-Orange */
+    --chart-3: 0 0% 60%;    /* Medium Grey */
+    --chart-4: 200 40% 50%; /* Cyan/Teal */
+    --chart-5: 270 40% 60%; /* Violet */
+
+    --app-color-success: 180 70% 50%; /* Cyan */
+    --app-color-warning: 50 90% 60%;  /* Yellow/Orange */
+    --app-color-info: 220 70% 70%;   /* Light Blue */
+  }
+
+  /* Deuteranopia Friendly Palette */
+  html.palette-deuteranopia-friendly {
+    --primary: 240 70% 70%; /* Strong Blue */
+    --primary-foreground: 240 30% 20%;
+    --accent: 30 90% 60%; /* Orange */
+    --accent-foreground: 30 30% 20%;
+    --destructive: 210 60% 55%; /* Using a distinct darker blue */
+    --destructive-foreground: 0 0% 100%;
+
+    --chart-1: 240 70% 70%; /* Strong Blue */
+    --chart-2: 30 90% 60%;  /* Orange */
+    --chart-3: 0 0% 55%;    /* Darker Grey */
+    --chart-4: 60 60% 70%;  /* Light Yellow/Gold */
+    --chart-5: 300 50% 65%; /* Magenta/Purple */
+
+    --app-color-success: 200 80% 55%; /* Tealish Blue */
+    --app-color-warning: 30 90% 60%;   /* Orange */
+    --app-color-info: 240 70% 75%;    /* Light Strong Blue */
+  }
+
+  /* Tritanopia Friendly Palette */
+  html.palette-tritanopia-friendly {
+    --primary: 0 80% 70%;   /* Bright Red */
+    --primary-foreground: 0 30% 20%;
+    --accent: 180 70% 55%; /* Cyan/Teal */
+    --accent-foreground: 180 30% 20%;
+    --destructive: 30 80% 60%; /* Orange-Red for destructive */
+    --destructive-foreground: 0 0% 100%;
+
+    --chart-1: 0 80% 70%;   /* Bright Red */
+    --chart-2: 180 70% 55%; /* Cyan/Teal */
+    --chart-3: 0 0% 50%;    /* Mid Grey */
+    --chart-4: 330 80% 75%; /* Pink */
+    --chart-5: 120 40% 60%; /* Muted Green (can appear greyish) */
+
+    --app-color-success: 150 70% 50%; /* Sea Green */
+    --app-color-warning: 30 90% 65%;   /* Orange/Red */
+    --app-color-info: 180 70% 70%;    /* Light Cyan */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Simulation Filters */
+.content-wrapper.filter-protanopia {
+  filter: url(#protanopia-filter);
+}
+.content-wrapper.filter-deuteranopia {
+  filter: url(#deuteranopia-filter);
+}
+.content-wrapper.filter-tritanopia {
+  filter: url(#tritanopia-filter);
+}
+
+/* Texture classes for buttons */
+.button-texture-stripes {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='hsl(var(--primary))'/%3E%3Cpath d='M-1 1l2-2M0 10l10-10M9 11l2-2' stroke='hsl(var(--primary-foreground))' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 10px 10px;
+}
+.button-texture-dots {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='hsl(var(--primary))'/%3E%3Ccircle cx='5' cy='5' r='2' fill='hsl(var(--primary-foreground))'/%3E%3C/svg%3E");
+  background-size: 10px 10px;
+}
+.button-texture-checkered {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='hsl(var(--primary))'/%3E%3Crect width='5' height='5' fill='hsl(var(--primary-foreground))'/%3E%3Crect x='5' y='5' width='5' height='5' fill='hsl(var(--primary-foreground))'/%3E%3C/svg%3E");
+  background-size: 10px 10px;
+}
+
+/* Ensure textured buttons still show text clearly */
+.button-texture-stripes, .button-texture-dots, .button-texture-checkered {
+  color: hsl(var(--primary-foreground)); /* Or a fixed high contrast color */
+  text-shadow: 0 0 2px hsl(var(--primary)); /* Make text pop from texture */
+}
+
+html.palette-protanopia-friendly .button-texture-stripes {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='hsl(220 60% 75%)'/%3E%3Cpath d='M-1 1l2-2M0 10l10-10M9 11l2-2' stroke='hsl(220 30% 20%)' stroke-width='1'/%3E%3C/svg%3E");
+}
+html.palette-protanopia-friendly .button-texture-dots {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='hsl(220 60% 75%)'/%3E%3Ccircle cx='5' cy='5' r='2' fill='hsl(220 30% 20%)'/%3E%3C/svg%3E");
+}
+html.palette-protanopia-friendly .button-texture-checkered {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='hsl(220 60% 75%)'/%3E%3Crect width='5' height='5' fill='hsl(220 30% 20%)'/%3E%3Crect x='5' y='5' width='5' height='5' fill='hsl(220 30% 20%)'/%3E%3C/svg%3E");
+}
+/* Similar overrides for deuteranopia and tritanopia button textures */
